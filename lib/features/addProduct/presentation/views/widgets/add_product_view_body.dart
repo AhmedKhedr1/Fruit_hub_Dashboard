@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:fruit_hub_dashboard/core/widgets/Custom_Button.dart';
 import 'package:fruit_hub_dashboard/core/widgets/custom_text_field.dart';
@@ -15,6 +17,11 @@ class AddProductViewBody extends StatefulWidget {
 class _AddProductViewBodyState extends State<AddProductViewBody> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+  late String name, code, decription;
+  late num price;
+  File? image;
+  bool isFeatured = false;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -29,35 +36,80 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 keyboardType: TextInputType.text,
                 hint: S.current.product_name,
                 maxLines: 1,
+                onSaved: (value) {
+                  name = value!;
+                },
+                validatormessage: S.current.field_required,
               ),
               SizedBox(height: 8),
               CustomTextField(
                 keyboardType: TextInputType.number,
                 hint: S.current.product_price,
                 maxLines: 1,
+                onSaved: (value) {
+                  price = num.parse(value!);
+                },
+                validatormessage: S.current.field_required,
               ),
               SizedBox(height: 8),
               CustomTextField(
                 keyboardType: TextInputType.number,
                 hint: S.current.product_code,
                 maxLines: 1,
+                onSaved: (value) {
+                  code = value!.toLowerCase();
+                },
+                validatormessage: S.current.field_required,
               ),
               SizedBox(height: 8),
               CustomTextField(
                 keyboardType: TextInputType.text,
                 hint: S.current.product_description,
                 maxLines: 5,
+                onSaved: (value) {
+                  decription = value!;
+                },
+                validatormessage: S.current.field_required,
               ),
               SizedBox(height: 8),
-              IsFeaturedIcheckBox(onChanged: (value) {}),
+              IsFeaturedIcheckBox(
+                onChanged: (value) {
+                  isFeatured = value;
+                },
+              ),
               SizedBox(height: 8),
-              ImageField(onFileChanged: (image) {}),
-              SizedBox(height: 48),
-              CustomButton(title: S.current.add_product, onpressed: () {}),
+              ImageField(
+                onFileChanged: (value) {
+                  image = value;
+                },
+              ),
+              SizedBox(height: 24),
+              CustomButton(
+                title: S.current.add_product,
+                onpressed: () {
+                  if (image != null) {
+                    if (_formkey.currentState!.validate()) {
+                      _formkey.currentState!.save();
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  } else {
+                    shoeError(context);
+                  }
+                },
+              ),
+              SizedBox(height: 16),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+void shoeError(BuildContext context) {
+  ScaffoldMessenger.of(
+    context,
+  ).showSnackBar(SnackBar(content: Text(S.current.please_select_image)));
 }

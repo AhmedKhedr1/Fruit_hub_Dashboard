@@ -4,5 +4,8 @@
   "product_price": "Product Price",
   "product_code": "Product Code",
   "product_description": "Product Description",
-  "is_featured_item": "Is Featured Item?"
+  "is_featured_item": "Is Featured Item?",
+    "field_required": "This field is required",
+    "please_select_image": "Please select an image"
+
 }

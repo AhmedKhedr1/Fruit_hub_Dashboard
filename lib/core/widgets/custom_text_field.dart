@@ -7,21 +7,24 @@ class CustomTextField extends StatelessWidget {
     required this.keyboardType,
     required this.hint,
     required this.maxLines,
+    required this.onSaved,
+    required this.validatormessage,
   });
   final TextInputType keyboardType;
-  final String hint;
+  final String hint, validatormessage;
   final int maxLines;
+  final Function(String?) onSaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // validator: (value) {
-      //   if (value == null || value.isEmpty) {
-      //     return validatormessage;
-      //   }
-      //   return null;
-      // },
-      // obscureText: obscureText,
-      // onSaved: onSaved,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return validatormessage;
+        }
+        return null;
+      },
+
+      onSaved: onSaved,
       maxLines: maxLines,
       style: TextStyless.semiBold16,
       keyboardType: keyboardType,
