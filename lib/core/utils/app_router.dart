@@ -1,15 +1,20 @@
-// ignore_for_file: constant_identifier_names
-
-import 'package:fruit_hub_dashboard/features/presentation/views/dashboard_view.dart';
+import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/add_product_view.dart';
+import 'package:fruit_hub_dashboard/features/dashbord/presentation/views/dashboard_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static const String KDashboardhView = '/';
+  static const String KDashboardView = '/';
+  static const String KAddProductView = '/addproductview';
+
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: KDashboardhView,
+        path: KDashboardView,
         builder: (context, state) => DashboardView(),
+      ),
+      GoRoute(
+        path: KAddProductView,
+        builder: (context, state) => AddProductView(),
       ),
     ],
   );

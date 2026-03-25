@@ -1,0 +1,8 @@
+{
+  "add_product": "Add Product",
+  "product_name": "Product Name",
+  "product_price": "Product Price",
+  "product_code": "Product Code",
+  "product_description": "Product Description",
+  "is_featured_item": "Is Featured Item?"
+}
