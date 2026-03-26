@@ -5,6 +5,7 @@ import 'package:fruit_hub_dashboard/core/widgets/Custom_Button.dart';
 import 'package:fruit_hub_dashboard/core/widgets/custom_text_field.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/image_field.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/is_featured_icheck_box.dart';
+import 'package:fruit_hub_dashboard/features/dashbord/domain/entities/add_product_input_entitiy.dart';
 import 'package:fruit_hub_dashboard/generated/l10n.dart';
 
 class AddProductViewBody extends StatefulWidget {
@@ -18,7 +19,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
-  late String name, code, decription;
+  late String name, code, description;
   late num price;
   File? image;
   bool isFeatured = false;
@@ -67,7 +68,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 hint: S.current.product_description,
                 maxLines: 5,
                 onSaved: (value) {
-                  decription = value!;
+                  description = value!;
                 },
                 validatormessage: S.current.field_required,
               ),
@@ -90,6 +91,14 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   if (image != null) {
                     if (_formkey.currentState!.validate()) {
                       _formkey.currentState!.save();
+                      AddProductInputEntitiy input = AddProductInputEntitiy(
+                        name: name,
+                        code: code,
+                        description: description,
+                        price: price,
+                        image: image!,
+                        isFeatured: isFeatured,
+                      );
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});

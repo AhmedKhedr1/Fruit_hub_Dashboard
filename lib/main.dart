@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      locale: Locale('en'),
+      locale: Locale('ar'),
       theme: ThemeData(fontFamily: 'Cairo'),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
