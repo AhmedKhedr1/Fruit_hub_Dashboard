@@ -6,6 +6,8 @@
   "product_description": "وصف المنتج",
   "is_featured_item": "هل هذا منتج مميز؟", 
   "field_required": "هذا الحقل مطلوب",
-  "please_select_image": "من فضلك اختر صورة"
+  "please_select_image": "من فضلك اختر صورة",
+  "product_management_title": "إدارة المنتجات",
+  "product_management_subtitle": "قم بتنظيم وتوسيع مخزون متجرك بكل سهولة"
 
 }

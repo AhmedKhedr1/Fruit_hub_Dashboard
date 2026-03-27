@@ -5,7 +5,9 @@
   "product_code": "Product Code",
   "product_description": "Product Description",
   "is_featured_item": "Is Featured Item?",
-    "field_required": "This field is required",
-    "please_select_image": "Please select an image"
+  "field_required": "This field is required",
+  "please_select_image": "Please select an image",
+   "product_management_title": "Product Management",
+  "product_management_subtitle": "Organize and expand your store inventory with ease"
 
 }

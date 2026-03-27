@@ -36,6 +36,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "product_description": MessageLookupByLibrary.simpleMessage(
       "Product Description",
     ),
+    "product_management_subtitle": MessageLookupByLibrary.simpleMessage(
+      "Organize and expand your store inventory with ease",
+    ),
+    "product_management_title": MessageLookupByLibrary.simpleMessage(
+      "Product Management",
+    ),
     "product_name": MessageLookupByLibrary.simpleMessage("Product Name"),
     "product_price": MessageLookupByLibrary.simpleMessage("Product Price"),
   };

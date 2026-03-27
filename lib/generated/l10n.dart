@@ -129,6 +129,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Product Management`
+  String get product_management_title {
+    return Intl.message(
+      'Product Management',
+      name: 'product_management_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Organize and expand your store inventory with ease`
+  String get product_management_subtitle {
+    return Intl.message(
+      'Organize and expand your store inventory with ease',
+      name: 'product_management_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -32,6 +32,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "product_code": MessageLookupByLibrary.simpleMessage("كود المنتج"),
     "product_description": MessageLookupByLibrary.simpleMessage("وصف المنتج"),
+    "product_management_subtitle": MessageLookupByLibrary.simpleMessage(
+      "قم بتنظيم وتوسيع مخزون متجرك بكل سهولة",
+    ),
+    "product_management_title": MessageLookupByLibrary.simpleMessage(
+      "إدارة المنتجات",
+    ),
     "product_name": MessageLookupByLibrary.simpleMessage("اسم المنتج"),
     "product_price": MessageLookupByLibrary.simpleMessage("سعر المنتج"),
   };
