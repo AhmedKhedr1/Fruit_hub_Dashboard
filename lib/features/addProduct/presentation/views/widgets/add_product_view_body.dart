@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub_dashboard/core/widgets/Custom_Button.dart';
 import 'package:fruit_hub_dashboard/core/widgets/custom_text_field.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/image_field.dart';
-import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/is_featured_icheck_box.dart';
-import 'package:fruit_hub_dashboard/features/dashbord/domain/entities/add_product_input_entitiy.dart';
+import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/is_featured_check_box.dart';
+import 'package:fruit_hub_dashboard/features/addProduct/domain/entities/add_product_input_entitiy.dart';
+import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/is_organic_check_box.dart';
 import 'package:fruit_hub_dashboard/generated/l10n.dart';
 
 class AddProductViewBody extends StatefulWidget {
@@ -20,9 +21,12 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   late String name, code, description;
-  late num price;
+  late num price, expiryMonth, numberOfCalories, unitAmount;
   File? image;
   bool isFeatured = false;
+
+  bool isOrganic = false;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -65,6 +69,36 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
               SizedBox(height: 8),
               CustomTextField(
                 keyboardType: TextInputType.text,
+                hint: S.current.expiry_date_hint,
+                maxLines: 1,
+                onSaved: (value) {
+                  expiryMonth = num.parse(value!);
+                },
+                validatormessage: S.current.field_required,
+              ),
+              SizedBox(height: 8),
+              CustomTextField(
+                keyboardType: TextInputType.text,
+                hint: S.current.calories_hint,
+                maxLines: 1,
+                onSaved: (value) {
+                  numberOfCalories = num.parse(value!);
+                },
+                validatormessage: S.current.field_required,
+              ),
+              SizedBox(height: 8),
+              CustomTextField(
+                keyboardType: TextInputType.text,
+                hint: S.current.amount_hint,
+                maxLines: 1,
+                onSaved: (value) {
+                  unitAmount = num.parse(value!);
+                },
+                validatormessage: S.current.field_required,
+              ),
+              SizedBox(height: 8),
+              CustomTextField(
+                keyboardType: TextInputType.text,
                 hint: S.current.product_description,
                 maxLines: 5,
                 onSaved: (value) {
@@ -76,6 +110,12 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
               IsFeaturedIcheckBox(
                 onChanged: (value) {
                   isFeatured = value;
+                },
+              ),
+              SizedBox(height: 8),
+              IsOganicCheckBox(
+                onChanged: (value) {
+                  isOrganic = value;
                 },
               ),
               SizedBox(height: 8),
@@ -98,6 +138,10 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         price: price,
                         image: image!,
                         isFeatured: isFeatured,
+                        expirationMonths: expiryMonth.toInt(),
+                        numOfCalories: numberOfCalories.toInt(),
+                        unitAmount: unitAmount.toInt(),
+                        isOrganic: isOrganic, revews: [],
                       );
                     } else {
                       autovalidateMode = AutovalidateMode.always;

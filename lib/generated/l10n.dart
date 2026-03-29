@@ -149,6 +149,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter expiry date`
+  String get expiry_date_hint {
+    return Intl.message(
+      'Enter expiry date',
+      name: 'expiry_date_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter calories`
+  String get calories_hint {
+    return Intl.message(
+      'Enter calories',
+      name: 'calories_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter amount`
+  String get amount_hint {
+    return Intl.message(
+      'Enter amount',
+      name: 'amount_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Is this product organic?`
+  String get is_organic_hint {
+    return Intl.message(
+      'Is this product organic?',
+      name: 'is_organic_hint',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

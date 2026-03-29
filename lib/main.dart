@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
       create: (context) => LanguageCubit(),
       child: BlocBuilder<LanguageCubit, LanguageState>(
         builder: (context, state) {
-          final router = AppRouter.getRouter(locale: state.locale);
           return MaterialApp.router(
             localizationsDelegates: [
               S.delegate,
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
             locale: state.locale,
             theme: ThemeData(fontFamily: 'Cairo'),
             debugShowCheckedModeBanner: false,
-            routerConfig: router,
+            routerConfig: AppRouter.getRouter(locale: state.locale),
           );
         },
       ),

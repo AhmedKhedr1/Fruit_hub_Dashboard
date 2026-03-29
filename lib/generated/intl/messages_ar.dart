@@ -23,10 +23,18 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "add_product": MessageLookupByLibrary.simpleMessage("إضافة منتج"),
+    "amount_hint": MessageLookupByLibrary.simpleMessage("أدخل الكمية"),
+    "calories_hint": MessageLookupByLibrary.simpleMessage(
+      "أدخل عدد السعرات الحرارية",
+    ),
+    "expiry_date_hint": MessageLookupByLibrary.simpleMessage(
+      "أدخل تاريخ الصلاحية",
+    ),
     "field_required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "is_featured_item": MessageLookupByLibrary.simpleMessage(
       "هل هذا منتج مميز؟",
     ),
+    "is_organic_hint": MessageLookupByLibrary.simpleMessage("هل المنتج عضوي؟"),
     "please_select_image": MessageLookupByLibrary.simpleMessage(
       "من فضلك اختر صورة",
     ),

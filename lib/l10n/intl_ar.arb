@@ -8,6 +8,11 @@
   "field_required": "هذا الحقل مطلوب",
   "please_select_image": "من فضلك اختر صورة",
   "product_management_title": "إدارة المنتجات",
-  "product_management_subtitle": "قم بتنظيم وتوسيع مخزون متجرك بكل سهولة"
+  "product_management_subtitle": "قم بتنظيم وتوسيع مخزون متجرك بكل سهولة",
+  "amount_hint": "أدخل الكمية",
+  "expiry_date_hint": "أدخل تاريخ الصلاحية",
+    "is_organic_hint": "هل المنتج عضوي؟",
+  "calories_hint": "أدخل عدد السعرات الحرارية"
+
 
 }

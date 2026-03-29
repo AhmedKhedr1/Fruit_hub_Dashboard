@@ -23,7 +23,7 @@ class _IsFeaturedIcheckBoxState extends State<IsFeaturedIcheckBox> {
             TextSpan(
               children: [
                 TextSpan(
-                  text:S.current.is_featured_item,
+                  text: S.current.is_featured_item,
                   style: TextStyless.semiBold16.copyWith(
                     color: Color(0xff616A6B),
                   ),
