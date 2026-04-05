@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:fruit_hub_dashboard/features/addProduct/data/review_model.dart';
+import 'package:fruit_hub_dashboard/features/addProduct/data/models/review_model.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/domain/entities/add_product_input_entitiy.dart';
 
 class AddProductInputModel {

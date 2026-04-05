@@ -1,12 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruit_hub_dashboard/core/localization/cubit/language_cubit.dart';
 import 'package:fruit_hub_dashboard/core/localization/cubit/language_state.dart';
+import 'package:fruit_hub_dashboard/core/services/custom_bloc_observer.dart';
+import 'package:fruit_hub_dashboard/core/services/get_it_service.dart';
+import 'package:fruit_hub_dashboard/core/services/supabase_storage_service.dart';
 import 'package:fruit_hub_dashboard/core/utils/app_router.dart';
+import 'package:fruit_hub_dashboard/firebase_options.dart';
 import 'package:fruit_hub_dashboard/generated/l10n.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  Bloc.observer = CustomBlocObserver();
+  setupGetit();
+  await SupabaseStorageService.initSupabase();
   runApp(const MyApp());
 }
 

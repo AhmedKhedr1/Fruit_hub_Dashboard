@@ -12,7 +12,9 @@
   "expiry_date_hint": "Enter expiry date",
   "calories_hint": "Enter calories",
   "amount_hint": "Enter amount",
-    "is_organic_hint": "Is this product organic?"
-
+    "is_organic_hint": "Is this product organic?",
+"display_orders": "Display Orders",
+"upload_image_failed": "Failed to upload image",
+"add_product_failed": "Failed to add product"
 
 }

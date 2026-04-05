@@ -47,7 +47,9 @@ class DashboardViewBody extends StatelessWidget {
               GoRouter.of(context).push(AppRouter.KAddProductView);
             },
           ),
-          SizedBox(height: 222),
+          SizedBox(height: 20),
+          CustomButton(title: S.current.display_orders, onpressed: () {}),
+          SizedBox(height: 160),
         ],
       ),
     );

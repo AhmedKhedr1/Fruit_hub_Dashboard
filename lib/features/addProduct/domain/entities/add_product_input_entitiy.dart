@@ -3,7 +3,8 @@ import 'dart:io';
 import 'package:fruit_hub_dashboard/features/addProduct/domain/entities/review_entity.dart';
 
 class AddProductInputEntitiy {
-  final String? name, code, description, imageUrl;
+  final String? name, code, description;
+  String? imageUrl;
   final num price;
   final File image;
   final bool isFeatured;

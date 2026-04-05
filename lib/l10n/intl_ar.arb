@@ -12,7 +12,10 @@
   "amount_hint": "أدخل الكمية",
   "expiry_date_hint": "أدخل تاريخ الصلاحية",
     "is_organic_hint": "هل المنتج عضوي؟",
-  "calories_hint": "أدخل عدد السعرات الحرارية"
+  "calories_hint": "أدخل عدد السعرات الحرارية",
+"display_orders": "عرض الطلبات",
+"upload_image_failed": "فشل في رفع الصورة",
+"add_product_failed": "فشل في إضافة المنتج"
 
 
 }

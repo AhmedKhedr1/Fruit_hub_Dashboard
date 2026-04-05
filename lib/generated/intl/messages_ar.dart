@@ -23,10 +23,14 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "add_product": MessageLookupByLibrary.simpleMessage("إضافة منتج"),
+    "add_product_failed": MessageLookupByLibrary.simpleMessage(
+      "فشل في إضافة المنتج",
+    ),
     "amount_hint": MessageLookupByLibrary.simpleMessage("أدخل الكمية"),
     "calories_hint": MessageLookupByLibrary.simpleMessage(
       "أدخل عدد السعرات الحرارية",
     ),
+    "display_orders": MessageLookupByLibrary.simpleMessage("عرض الطلبات"),
     "expiry_date_hint": MessageLookupByLibrary.simpleMessage(
       "أدخل تاريخ الصلاحية",
     ),
@@ -48,5 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "product_name": MessageLookupByLibrary.simpleMessage("اسم المنتج"),
     "product_price": MessageLookupByLibrary.simpleMessage("سعر المنتج"),
+    "upload_image_failed": MessageLookupByLibrary.simpleMessage(
+      "فشل في رفع الصورة",
+    ),
   };
 }

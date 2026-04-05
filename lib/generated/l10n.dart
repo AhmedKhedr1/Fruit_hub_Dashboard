@@ -189,6 +189,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Display Orders`
+  String get display_orders {
+    return Intl.message(
+      'Display Orders',
+      name: 'display_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to upload image`
+  String get upload_image_failed {
+    return Intl.message(
+      'Failed to upload image',
+      name: 'upload_image_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to add product`
+  String get add_product_failed {
+    return Intl.message(
+      'Failed to add product',
+      name: 'add_product_failed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

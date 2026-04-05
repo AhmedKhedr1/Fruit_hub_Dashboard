@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub_dashboard/core/widgets/Custom_Button.dart';
 import 'package:fruit_hub_dashboard/core/widgets/custom_text_field.dart';
+import 'package:fruit_hub_dashboard/features/addProduct/presentation/manager/cubit/add_product_cubit.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/image_field.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/is_featured_check_box.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/domain/entities/add_product_input_entitiy.dart';
@@ -141,8 +143,10 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         expirationMonths: expiryMonth.toInt(),
                         numOfCalories: numberOfCalories.toInt(),
                         unitAmount: unitAmount.toInt(),
-                        isOrganic: isOrganic, revews: [],
+                        isOrganic: isOrganic,
+                        revews: [],
                       );
+                      context.read<AddProductCubit>().addProduct(input);
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
