@@ -17,6 +17,7 @@ void main() async {
   Bloc.observer = CustomBlocObserver();
   setupGetit();
   await SupabaseStorageService.initSupabase();
+  //await SupabaseStorageService.createBuckets('fruits_image');
   runApp(const MyApp());
 }
 

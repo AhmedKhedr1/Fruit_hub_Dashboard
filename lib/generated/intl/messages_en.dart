@@ -26,6 +26,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_product_failed": MessageLookupByLibrary.simpleMessage(
       "Failed to add product",
     ),
+    "add_product_success": MessageLookupByLibrary.simpleMessage(
+      "Product added successfully",
+    ),
     "amount_hint": MessageLookupByLibrary.simpleMessage("Enter amount"),
     "calories_hint": MessageLookupByLibrary.simpleMessage("Enter calories"),
     "display_orders": MessageLookupByLibrary.simpleMessage("Display Orders"),

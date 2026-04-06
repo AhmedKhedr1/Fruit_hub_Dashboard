@@ -26,6 +26,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_product_failed": MessageLookupByLibrary.simpleMessage(
       "فشل في إضافة المنتج",
     ),
+    "add_product_success": MessageLookupByLibrary.simpleMessage(
+      "تمت إضافة المنتج بنجاح",
+    ),
     "amount_hint": MessageLookupByLibrary.simpleMessage("أدخل الكمية"),
     "calories_hint": MessageLookupByLibrary.simpleMessage(
       "أدخل عدد السعرات الحرارية",

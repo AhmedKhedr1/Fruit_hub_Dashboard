@@ -15,7 +15,8 @@
   "calories_hint": "أدخل عدد السعرات الحرارية",
 "display_orders": "عرض الطلبات",
 "upload_image_failed": "فشل في رفع الصورة",
-"add_product_failed": "فشل في إضافة المنتج"
+"add_product_failed": "فشل في إضافة المنتج",
+"add_product_success": "تمت إضافة المنتج بنجاح"
 
 
 }

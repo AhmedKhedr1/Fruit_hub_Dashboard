@@ -1,2 +1,2 @@
 const KSupabaseUrl = 'https://sttbehmdmksnupuuhqfu.supabase.co';
-const KSupabaseKey = 'sb_publishable_CuPAie27OX7Jx910k4xUhQ_iL3CSgwm';
+const KSupabaseKey = 'sb_secret_H4SPHiPMdqrQW73GDBHHpA_-3iYPJFG';

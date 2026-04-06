@@ -219,6 +219,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Product added successfully`
+  String get add_product_success {
+    return Intl.message(
+      'Product added successfully',
+      name: 'add_product_success',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
