@@ -5,7 +5,6 @@ import 'package:fruit_hub_dashboard/core/repos/product_repo/products_repo.dart';
 import 'package:fruit_hub_dashboard/core/services/get_it_service.dart';
 import 'package:fruit_hub_dashboard/core/utils/Text_Styless.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/presentation/manager/cubit/add_product_cubit.dart';
-import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/add_product_view_body.dart';
 import 'package:fruit_hub_dashboard/features/addProduct/presentation/views/widgets/add_product_view_body_bloc_builder.dart';
 import 'package:fruit_hub_dashboard/generated/l10n.dart';
 

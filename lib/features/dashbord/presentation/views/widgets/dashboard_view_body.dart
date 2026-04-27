@@ -48,7 +48,12 @@ class DashboardViewBody extends StatelessWidget {
             },
           ),
           SizedBox(height: 20),
-          CustomButton(title: S.current.display_orders, onpressed: () {}),
+          CustomButton(
+            title: S.current.display_orders,
+            onpressed: () {
+              GoRouter.of(context).push(AppRouter.KOrdersView);
+            },
+          ),
           SizedBox(height: 160),
         ],
       ),

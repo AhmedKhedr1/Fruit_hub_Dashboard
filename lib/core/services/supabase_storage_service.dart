@@ -17,14 +17,19 @@ class SupabaseStorageService extends StorageService {
       anonKey: KSupabaseKey,
     );
   }
+Future<String> uploadImage(File file, String path) async {
+  final fileName = DateTime.now().millisecondsSinceEpoch.toString();
 
-  @override
-  Future<String> uploadImage(File file, String path) async {
-    String fileName = b.basename(file.path);
-    String extensionName = b.extension(file.path);
-    var result = await _supabase.client.storage
-        .from('fruits_image')
-        .upload('$path/$fileName.$extensionName', file);
-    return result;
-  }
+  final extension = b.extension(file.path).replaceAll('.', '');
+
+  final filePath = '$path/$fileName.$extension';
+
+  await _supabase.client.storage
+      .from('fruits_image')
+      .upload(filePath, file);
+
+  return _supabase.client.storage
+      .from('fruits_image')
+      .getPublicUrl(filePath);
+}
 }

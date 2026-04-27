@@ -13,6 +13,7 @@ class AddProductInputModel {
   final int numOfCalories, unitAmount;
   final num avgRating = 0;
   final num ratingCount = 0;
+  final int selleingcount;
   final List<ReviewModel> reviews;
 
   AddProductInputModel({
@@ -28,6 +29,7 @@ class AddProductInputModel {
     required this.numOfCalories,
     required this.unitAmount,
     required this.reviews,
+    this.selleingcount = 0,
   });
   factory AddProductInputModel.fromEntity(
     AddProductInputEntitiy addProductInputEntitiy,
@@ -57,6 +59,7 @@ class AddProductInputModel {
       "price": price,
       "isFeatured": isFeatured,
       "expirationMonths": expirationMonths,
+      "sellingCount": selleingcount,
       "isOrganic": isOrganic,
       "numOfCalories": numOfCalories,
       "unitAmount": unitAmount,

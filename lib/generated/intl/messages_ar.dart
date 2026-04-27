@@ -38,10 +38,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل تاريخ الصلاحية",
     ),
     "field_required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+    "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
     "is_featured_item": MessageLookupByLibrary.simpleMessage(
       "هل هذا منتج مميز؟",
     ),
     "is_organic_hint": MessageLookupByLibrary.simpleMessage("هل المنتج عضوي؟"),
+    "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
     "please_select_image": MessageLookupByLibrary.simpleMessage(
       "من فضلك اختر صورة",
     ),

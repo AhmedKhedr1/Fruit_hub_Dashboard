@@ -38,12 +38,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "field_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "filter": MessageLookupByLibrary.simpleMessage("Filter"),
     "is_featured_item": MessageLookupByLibrary.simpleMessage(
       "Is Featured Item?",
     ),
     "is_organic_hint": MessageLookupByLibrary.simpleMessage(
       "Is this product organic?",
     ),
+    "orders": MessageLookupByLibrary.simpleMessage("Orders"),
     "please_select_image": MessageLookupByLibrary.simpleMessage(
       "Please select an image",
     ),

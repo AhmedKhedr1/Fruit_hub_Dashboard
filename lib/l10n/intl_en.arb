@@ -16,6 +16,7 @@
 "display_orders": "Display Orders",
 "upload_image_failed": "Failed to upload image",
 "add_product_failed": "Failed to add product",
-"add_product_success": "Product added successfully"
-
+"add_product_success": "Product added successfully",
+"orders": "Orders",
+"filter": "Filter"
 }

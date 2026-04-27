@@ -152,7 +152,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                       setState(() {});
                     }
                   } else {
-                    shoeError(context);
+                    showError(context);
                   }
                 },
               ),
@@ -165,7 +165,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
   }
 }
 
-void shoeError(BuildContext context) {
+void showError(BuildContext context) {
   ScaffoldMessenger.of(
     context,
   ).showSnackBar(SnackBar(content: Text(S.current.please_select_image)));
