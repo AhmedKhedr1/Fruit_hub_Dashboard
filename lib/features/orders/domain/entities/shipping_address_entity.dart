@@ -9,4 +9,7 @@ class ShippingAddressEntity {
     this.phoneNum,
     this.floor,
   });
+  String tostring() {
+    return '$address $floor $city';
+  }
 }

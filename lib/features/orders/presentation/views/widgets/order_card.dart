@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub_dashboard/features/orders/domain/entities/order_entity.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class OrderCard extends StatelessWidget {
   final OrderEntity order;
@@ -69,11 +70,17 @@ class OrderCard extends StatelessWidget {
                       /// IMAGE
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: Image.network(
-                          product.imageUrl,
+                        child: CachedNetworkImage(
+                          imageUrl: product.imageUrl,
                           width: 60,
                           height: 60,
-                          fit: BoxFit.cover,
+
+                          errorWidget: (context, url, error) => Container(
+                            width: 60,
+                            height: 60,
+                            color: Colors.grey.shade300,
+                            child: const Icon(Icons.error, color: Colors.red),
+                          ),
                         ),
                       ),
 

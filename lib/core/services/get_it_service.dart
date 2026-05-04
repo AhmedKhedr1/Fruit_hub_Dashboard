@@ -6,6 +6,8 @@ import 'package:fruit_hub_dashboard/core/services/database_service.dart';
 import 'package:fruit_hub_dashboard/core/services/firestore_service.dart';
 import 'package:fruit_hub_dashboard/core/services/storage_services.dart';
 import 'package:fruit_hub_dashboard/core/services/supabase_storage_service.dart';
+import 'package:fruit_hub_dashboard/features/orders/data/repos/order_repo_impl.dart';
+import 'package:fruit_hub_dashboard/features/orders/domain/repos/order_repo.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -17,5 +19,8 @@ void setupGetit() {
   getIt.registerSingleton<DataBaseService>(FirestoreService());
   getIt.registerSingleton<ProductsRepo>(
     ProductRepoImpl(getIt.get<DataBaseService>()),
+  );
+  getIt.registerSingleton<OrderRepo>(
+    OrderRepoImpl(dataBaseService: getIt.get<DataBaseService>()),
   );
 }
