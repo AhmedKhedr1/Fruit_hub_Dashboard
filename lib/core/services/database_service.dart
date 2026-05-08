@@ -10,6 +10,11 @@ abstract class DataBaseService {
     String? documentId,
     Map<String, dynamic>? query,
   });
+  Stream<dynamic> streamData({
+    required String path,
+    String? documentId,
+    Map<String, dynamic>? query,
+  });
 
   Future<bool> checkIfDataexists({
     required String path,

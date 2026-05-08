@@ -3,5 +3,5 @@ import 'package:fruit_hub_dashboard/core/errors/failures.dart';
 import 'package:fruit_hub_dashboard/features/orders/domain/entities/order_entity.dart';
 
 abstract class OrderRepo {
-  Future<Either<Failure, List<OrderEntity>>> fetchOrders();
+  Stream<Either<Failure, List<OrderEntity>>> fetchOrders();
 }
