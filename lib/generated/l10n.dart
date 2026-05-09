@@ -140,10 +140,10 @@ class S {
     );
   }
 
-  /// `Organize and expand your store inventory with ease`
+  /// `Add your new products and easily track your store's orders from one place`
   String get product_management_subtitle {
     return Intl.message(
-      'Organize and expand your store inventory with ease',
+      'Add your new products and easily track your store\'s orders from one place',
       name: 'product_management_subtitle',
       desc: '',
       args: [],
@@ -238,6 +238,16 @@ class S {
   /// `Filter`
   String get filter {
     return Intl.message('Filter', name: 'filter', desc: '', args: []);
+  }
+
+  /// `Accept`
+  String get accept {
+    return Intl.message('Accept', name: 'accept', desc: '', args: []);
+  }
+
+  /// `Reject`
+  String get reject {
+    return Intl.message('Reject', name: 'reject', desc: '', args: []);
   }
 }
 

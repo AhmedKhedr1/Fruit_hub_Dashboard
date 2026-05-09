@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fruit_hub_dashboard/core/enums/order_enum.dart';
 import 'package:fruit_hub_dashboard/core/errors/failures.dart';
 import 'package:fruit_hub_dashboard/core/services/database_service.dart';
 import 'package:fruit_hub_dashboard/core/utils/backend_endpoint.dart';
@@ -23,5 +24,10 @@ class OrderRepoImpl extends OrderRepo {
     } catch (e) {
       yield left(ServerFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<Either<Failure, void>> UpdateOrder({required OrderStatusEnum status, required String orderID}) {
+    throw UnimplementedError();
   }
 }

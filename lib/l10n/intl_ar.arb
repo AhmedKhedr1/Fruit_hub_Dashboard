@@ -8,7 +8,7 @@
   "field_required": "هذا الحقل مطلوب",
   "please_select_image": "من فضلك اختر صورة",
   "product_management_title": "إدارة المنتجات",
-  "product_management_subtitle": "قم بتنظيم وتوسيع مخزون متجرك بكل سهولة",
+  "product_management_subtitle": "أضف منتجاتك الجديدة وتابع طلبات متجرك بكل سهولة من مكان واحد",
   "amount_hint": "أدخل الكمية",
   "expiry_date_hint": "أدخل تاريخ الصلاحية",
     "is_organic_hint": "هل المنتج عضوي؟",
@@ -18,7 +18,9 @@
 "add_product_failed": "فشل في إضافة المنتج",
 "add_product_success": "تمت إضافة المنتج بنجاح",
 "orders": "الطلبات",
-"filter": "تصفية"
+"filter": "تصفية",
+"accept": "قبول",
+  "reject": "رفض"
 
 
 }

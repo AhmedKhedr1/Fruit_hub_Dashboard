@@ -37,6 +37,7 @@ class DashboardViewBody extends StatelessWidget {
           SizedBox(height: 10),
           Text(
             S.current.product_management_subtitle,
+            textAlign: TextAlign.center,
             style: TextStyless.regular16,
           ),
 

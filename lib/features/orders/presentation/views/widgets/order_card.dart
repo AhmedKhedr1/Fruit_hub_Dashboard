@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub_dashboard/features/orders/domain/entities/order_entity.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fruit_hub_dashboard/features/orders/presentation/views/widgets/order_actions.dart';
+import 'package:fruit_hub_dashboard/features/orders/presentation/views/widgets/order_payment_info.dart';
+import 'package:fruit_hub_dashboard/features/orders/presentation/views/widgets/order_products_list.dart';
+import 'package:fruit_hub_dashboard/features/orders/presentation/views/widgets/order_user_info.dart';
 
 class OrderCard extends StatelessWidget {
   final OrderEntity order;
@@ -18,38 +21,17 @@ class OrderCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// USER INFO
-            Text(
-              order.shippingAddressEntity.name ?? '',
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Text(order.shippingAddressEntity.email ?? ''),
-            Text(order.shippingAddressEntity.phoneNum ?? ''),
-            Text(order.shippingAddressEntity.address ?? ''),
+            OrderActions(onAccept: () {}, onReject: () {}),
+            SizedBox(height: 16,),
+
+            OrderUserInfo(order: order),
 
             const Divider(height: 20),
 
-            /// PAYMENT + TOTAL
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Payment: ${order.paymentMethod}',
-                  style: const TextStyle(fontWeight: FontWeight.w500),
-                ),
-                Text(
-                  'Total: \$${order.totalPrice}',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green,
-                  ),
-                ),
-              ],
-            ),
+            OrderPaymentInfo(order: order),
 
             const SizedBox(height: 12),
 
-            /// PRODUCTS TITLE
             const Text(
               'Products:',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
@@ -57,87 +39,7 @@ class OrderCard extends StatelessWidget {
 
             const SizedBox(height: 10),
 
-            Column(
-              children: order.orderProductEntity.map((product) {
-                return Container(
-                  margin: const EdgeInsets.only(bottom: 10),
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    children: [
-                      /// IMAGE
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: CachedNetworkImage(
-                          imageUrl: product.imageUrl,
-                          width: 60,
-                          height: 60,
-
-                          errorWidget: (context, url, error) => Container(
-                            width: 60,
-                            height: 60,
-                            color: Colors.grey.shade300,
-                            child: const Icon(Icons.error, color: Colors.red),
-                          ),
-                        ),
-                      ),
-
-                      const SizedBox(width: 12),
-
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              product.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              'Code: ${product.code}',
-                              style: TextStyle(
-                                color: Colors.grey.shade600,
-                                fontSize: 12,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              '\$${product.price}',
-                              style: const TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 6,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.green.shade50,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          'x${product.quantity}',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }).toList(),
-            ),
+            OrderProductsList(products: order.orderProductEntity),
           ],
         ),
       ),

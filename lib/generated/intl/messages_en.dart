@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accept": MessageLookupByLibrary.simpleMessage("Accept"),
     "add_product": MessageLookupByLibrary.simpleMessage("Add Product"),
     "add_product_failed": MessageLookupByLibrary.simpleMessage(
       "Failed to add product",
@@ -54,13 +55,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Product Description",
     ),
     "product_management_subtitle": MessageLookupByLibrary.simpleMessage(
-      "Organize and expand your store inventory with ease",
+      "Add your new products and easily track your store\'s orders from one place",
     ),
     "product_management_title": MessageLookupByLibrary.simpleMessage(
       "Product Management",
     ),
     "product_name": MessageLookupByLibrary.simpleMessage("Product Name"),
     "product_price": MessageLookupByLibrary.simpleMessage("Product Price"),
+    "reject": MessageLookupByLibrary.simpleMessage("Reject"),
     "upload_image_failed": MessageLookupByLibrary.simpleMessage(
       "Failed to upload image",
     ),

@@ -8,7 +8,7 @@
   "field_required": "This field is required",
   "please_select_image": "Please select an image",
    "product_management_title": "Product Management",
-  "product_management_subtitle": "Organize and expand your store inventory with ease",
+  "product_management_subtitle": "Add your new products and easily track your store's orders from one place",
   "expiry_date_hint": "Enter expiry date",
   "calories_hint": "Enter calories",
   "amount_hint": "Enter amount",
@@ -18,5 +18,8 @@
 "add_product_failed": "Failed to add product",
 "add_product_success": "Product added successfully",
 "orders": "Orders",
-"filter": "Filter"
+"filter": "Filter",
+ "accept": "Accept",
+  "reject": "Reject"
+
 }

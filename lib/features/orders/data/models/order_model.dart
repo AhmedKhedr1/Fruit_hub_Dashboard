@@ -1,3 +1,4 @@
+import 'package:fruit_hub_dashboard/core/enums/order_enum.dart';
 import 'package:fruit_hub_dashboard/features/orders/data/models/order_product_model.dart';
 import 'package:fruit_hub_dashboard/features/orders/data/models/shipping_address_model.dart';
 import 'package:fruit_hub_dashboard/features/orders/domain/entities/order_entity.dart';
@@ -8,6 +9,7 @@ class OrderModel {
   final ShippingAddressModel shippingAddressModel;
   final List<OrderProductModel> orderProductModel;
   final String paymentMethod;
+  final String status;
 
   OrderModel({
     required this.totalPrice,
@@ -15,6 +17,7 @@ class OrderModel {
     required this.shippingAddressModel,
     required this.orderProductModel,
     required this.paymentMethod,
+    required this.status,
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) {
@@ -28,6 +31,7 @@ class OrderModel {
         json['orderProductModel'].map((e) => OrderProductModel.fromJson(e)),
       ),
       paymentMethod: json['paymentMethod'],
+      status: json['status'],
     );
   }
   tojson() {
@@ -47,6 +51,7 @@ class OrderModel {
       shippingAddressEntity: shippingAddressModel.toEntity(),
       orderProductEntity: orderProductModel.map((e) => e.toEntity()).toList(),
       paymentMethod: paymentMethod,
+      status: OrderStatusEnum.values.firstWhere((e) => e.name == status),
     );
   }
 }
