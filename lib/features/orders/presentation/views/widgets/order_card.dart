@@ -13,31 +13,31 @@ class OrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.symmetric(vertical: 10),
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Padding(
-        padding: const EdgeInsets.all(14),
+        padding: EdgeInsets.all(14),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            OrderActions(onAccept: () {}, onReject: () {}),
-            SizedBox(height: 16,),
+            OrderActions(order: order),
+            SizedBox(height: 16),
 
             OrderUserInfo(order: order),
 
-            const Divider(height: 20),
+            Divider(height: 20),
 
             OrderPaymentInfo(order: order),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12),
 
-            const Text(
+            Text(
               'Products:',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
 
             OrderProductsList(products: order.orderProductEntity),
           ],

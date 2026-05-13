@@ -10,6 +10,7 @@ class OrderModel {
   final List<OrderProductModel> orderProductModel;
   final String paymentMethod;
   final String status;
+  final String orderID;
 
   OrderModel({
     required this.totalPrice,
@@ -18,6 +19,7 @@ class OrderModel {
     required this.orderProductModel,
     required this.paymentMethod,
     required this.status,
+    required this.orderID,
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) {
@@ -32,6 +34,7 @@ class OrderModel {
       ),
       paymentMethod: json['paymentMethod'],
       status: json['status'],
+      orderID: json['orderID'],
     );
   }
   tojson() {
@@ -52,6 +55,7 @@ class OrderModel {
       orderProductEntity: orderProductModel.map((e) => e.toEntity()).toList(),
       paymentMethod: paymentMethod,
       status: OrderStatusEnum.values.firstWhere((e) => e.name == status),
+      orderID: orderID,
     );
   }
 }

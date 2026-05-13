@@ -35,5 +35,6 @@ OrderEntity getDummyOrder() {
       ),
     ],
     status: OrderStatusEnum.pending,
+    orderID: '',
   );
 }

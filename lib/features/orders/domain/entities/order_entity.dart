@@ -5,6 +5,7 @@ import 'package:fruit_hub_dashboard/features/orders/domain/entities/shipping_add
 class OrderEntity {
   final double totalPrice;
   final String uId;
+  final String orderID;
   final ShippingAddressEntity shippingAddressEntity;
   final List<OrderProductEntity> orderProductEntity;
   final String paymentMethod;
@@ -16,8 +17,7 @@ class OrderEntity {
     required this.shippingAddressEntity,
     required this.orderProductEntity,
     required this.paymentMethod,
-    required this.status
+    required this.status,
+    required this.orderID,
   });
-
-
 }

@@ -36,9 +36,7 @@ class OrderUserInfo extends StatelessWidget {
                 order.shippingAddressEntity.phoneNum ?? '',
               ),
 
-              Text(
-                order.shippingAddressEntity.address ?? '',
-              ),
+              Text('${order.shippingAddressEntity.city },${order.shippingAddressEntity.address}, ${order.shippingAddressEntity.floor}'),
             ],
           ),
         ),

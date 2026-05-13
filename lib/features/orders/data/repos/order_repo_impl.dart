@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:dartz/dartz.dart';
 import 'package:fruit_hub_dashboard/core/enums/order_enum.dart';
 import 'package:fruit_hub_dashboard/core/errors/failures.dart';
@@ -16,7 +18,7 @@ class OrderRepoImpl extends OrderRepo {
     try {
       await for (var (data as List<Map<String, dynamic>>)
           in dataBaseService.streamData(path: BackendEndpoint.getOrders)) {
-        List<OrderEntity> orders = (data as List<dynamic>)
+        List<OrderEntity> orders = data
             .map<OrderEntity>((e) => OrderModel.fromJson(e).toEntity())
             .toList();
         yield right(orders);
@@ -27,7 +29,19 @@ class OrderRepoImpl extends OrderRepo {
   }
 
   @override
-  Future<Either<Failure, void>> UpdateOrder({required OrderStatusEnum status, required String orderID}) {
-    throw UnimplementedError();
+  Future<Either<Failure, void>> UpdateOrder({
+    required OrderStatusEnum status,
+    required String orderID,
+  }) async {
+    try {
+      await dataBaseService.updateData(
+        path: BackendEndpoint.updateOrders,
+        data: {'status': status.name},
+        documentId: orderID,
+      );
+      return right(null);
+    } catch (e) {
+      return Future.value(left(ServerFailure(e.toString())));
+    }
   }
 }
